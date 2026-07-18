@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const modal = document.getElementById('lead-modal');
   const modalClose = document.querySelector('.modal-close');
-  const allButtons = document.querySelectorAll('.btn-primary, .header-cta');
+  const allButtons = document.querySelectorAll('.btn-primary:not([type="submit"]), .header-cta');
   
   if (modal) {
     allButtons.forEach(btn => {
