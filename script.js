@@ -184,4 +184,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ==========================================================================
+  // MÁSCARA DE TELEFONE WHATSAPP
+  // ==========================================================================
+  const phoneInput = document.getElementById('lead-phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', function (e) {
+      let val = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+      let formatted = '';
+      
+      if (val.length > 0) {
+        formatted += '(' + val.substring(0, 2);
+      }
+      if (val.length > 2) {
+        formatted += ') ' + val.substring(2, 7);
+      }
+      if (val.length > 7) {
+        formatted += '-' + val.substring(7, 11);
+      }
+      
+      e.target.value = formatted;
+    });
+  }
 });
