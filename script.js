@@ -207,4 +207,57 @@ document.addEventListener('DOMContentLoaded', () => {
       e.target.value = formatted;
     });
   }
+
+  // ==========================================================================
+  // MÁSCARA DE CNPJ
+  // ==========================================================================
+  const cnpjInput = document.getElementById('lead-cnpj');
+  if (cnpjInput) {
+    cnpjInput.addEventListener('input', function (e) {
+      let val = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+      let formatted = '';
+      
+      if (val.length > 0) {
+        formatted += val.substring(0, 2);
+      }
+      if (val.length > 2) {
+        formatted += '.' + val.substring(2, 5);
+      }
+      if (val.length > 5) {
+        formatted += '.' + val.substring(5, 8);
+      }
+      if (val.length > 8) {
+        formatted += '/' + val.substring(8, 12);
+      }
+      if (val.length > 12) {
+        formatted += '-' + val.substring(12, 14);
+      }
+      
+      e.target.value = formatted;
+    });
+  }
+
+  // ==========================================================================
+  // VALIDAÇÃO E ENVIO DO FORMULÁRIO
+  // ==========================================================================
+  const leadForm = document.getElementById('lead-form');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const cnpjVal = cnpjInput ? cnpjInput.value.replace(/\D/g, '') : '';
+      const nameVal = document.getElementById('lead-name') ? document.getElementById('lead-name').value.trim() : '';
+      const emailVal = document.getElementById('lead-email') ? document.getElementById('lead-email').value.trim() : '';
+      const phoneVal = document.getElementById('lead-phone') ? document.getElementById('lead-phone').value.replace(/\D/g, '') : '';
+      
+      const hasCnpj = cnpjVal.length === 14;
+      const hasOthers = nameVal.length > 0 && emailVal.length > 0 && phoneVal.length >= 10;
+      
+      if (hasCnpj || hasOthers) {
+        window.location.href = '/obg';
+      } else {
+        alert('Por favor, preencha um CNPJ válido OU os campos de Nome, Email e WhatsApp.');
+      }
+    });
+  }
 });

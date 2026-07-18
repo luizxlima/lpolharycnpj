@@ -805,14 +805,18 @@
       <span class="modal-close">&times;</span>
       <h3 style="margin-bottom: 8px;">Entrar na Lista de Espera</h3>
       <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Preencha os dados abaixo para receber suas 5 consultas gratuitas.</p>
-      <form id="lead-form" class="lead-form" onsubmit="event.preventDefault(); window.location.href='/obg';">
+      <form id="lead-form" class="lead-form">
+        <div class="form-group">
+          <label for="lead-cnpj">CNPJ (Opcional se preencher os demais)</label>
+          <input type="text" id="lead-cnpj" placeholder="00.000.000/0000-00" maxlength="18">
+        </div>
         <div class="form-group">
           <label for="lead-name">Nome Completo</label>
-          <input type="text" id="lead-name" placeholder="Seu nome" required>
+          <input type="text" id="lead-name" placeholder="Seu nome">
         </div>
         <div class="form-group">
           <label for="lead-email">E-mail Profissional</label>
-          <input type="email" id="lead-email" placeholder="seu@email.com" required>
+          <input type="email" id="lead-email" placeholder="seu@email.com">
         </div>
         <div class="form-group">
           <label for="lead-phone">WhatsApp</label>
@@ -820,7 +824,7 @@
             <div class="phone-prefix">
               <span>🇧🇷</span> +55
             </div>
-            <input type="tel" id="lead-phone" placeholder="(11) 99999-9999" required maxlength="15">
+            <input type="tel" id="lead-phone" placeholder="(11) 99999-9999" maxlength="15">
           </div>
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">GARANTIR ACESSO</button>
