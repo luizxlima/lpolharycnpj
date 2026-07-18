@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <title>Obrigado! | Olhary</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%236366f1'/></svg>">
+  <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    .thank-you-section {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .thank-you-box {
+      background: var(--bg-main);
+      padding: 60px 40px;
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      max-width: 600px;
+      margin: 0 auto;
+      border-top: 4px solid var(--primary);
+      position: relative;
+    }
+    .icon-success {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .hero-glow-back {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container" style="justify-content: center;">
+      <a href="../" class="logo" id="header-logo">
+        <h2 style="color: var(--text-main); margin:0; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.5px;">Olhary</h2>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       THANK YOU SECTION
+       ========================================================================== -->
+  <section class="section-padding thank-you-section">
+    <div class="hero-glow-back"></div>
+    <div class="container">
+      <div class="thank-you-box">
+        <div class="icon-success">✅</div>
+        <h2>Inscrição Confirmada!</h2>
+        <p class="hero-description" style="margin-bottom: 30px;">
+          Seu cadastro na lista de espera foi realizado com sucesso. Estamos analisando o seu perfil e entraremos em contato via e-mail e WhatsApp assim que as suas 5 consultas gratuitas forem liberadas!
+        </p>
+        <a href="../" class="btn btn-primary btn-pulse">VOLTAR PARA A PÁGINA INICIAL</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" style="margin-top: 0; padding-top: 30px; border-top: none;">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 Olhary Plataforma de Inteligência. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
